@@ -1,0 +1,67 @@
+{
+  "name": "fe-vue3-template",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "vue-cli-service serve",
+    "uat": "vue-cli-service build --mode uat",
+    "release": "vue-cli-service build",
+    "preview": "serve -s dist",
+    "type:check": "tsc --noEmit --skipLibCheck",
+    "format": "prettier --write '**/*.{ts,tsx,js,vue,css,scss,html,json}'",
+    "lint": "vue-cli-service lint",
+    "api": "tsg -c ./src/api/tsg.config.ts",
+    "chrome": "open -n /Applications/Google\\ Chrome.app/ --args --disable-web-security  --user-data-dir=$HOME/MyChromeDevUserData/"
+  },
+  "dependencies": {
+    "@abraham/reflection": "^0.8.0",
+    "core-js": "^3.8.3",
+    "injection-js": "^2.4.0",
+    "tslib": "^2.3.1",
+    "vue": "^3.2.13",
+    "vue3-oop": "^0.0.14"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@types/webpack-env": "^1.16.3",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "@vue/cli-plugin-babel": "~5.0.0-rc.1",
+    "@vue/cli-plugin-eslint": "~5.0.0-rc.1",
+    "@vue/cli-plugin-typescript": "~5.0.0-rc.1",
+    "@vue/cli-service": "~5.0.0-rc.1",
+    "@vue/eslint-config-typescript": "^9.1.0",
+    "commitizen": "^4.2.4",
+    "commitlint-config-cz": "^0.13.2",
+    "cz-customizable": "^6.3.0",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.0.3",
+    "lint-staged": "^12.1.2",
+    "prettier": "^2.4.1",
+    "sass": "^1.32.7",
+    "sass-loader": "^12.0.0",
+    "serve": "^13.0.2",
+    "ts-gear": "^4.2.1",
+    "typescript": "~4.5.3",
+    "vite": "^2.7.1",
+    "yorkie": "^2.0.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "vue-cli-service lint"
+    ],
+    "*.{css,scss,html,json}": [
+      "prettier --write"
+    ]
+  }
+}
