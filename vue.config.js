@@ -67,6 +67,7 @@ module.exports = defineConfig({
         modules: {
           localIdentName: '[local]--[hash:base64:5]',
           exportLocalsConvention: 'camelCaseOnly',
+          auto: true,
         },
       },
       less: {
