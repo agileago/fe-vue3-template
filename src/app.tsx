@@ -1,14 +1,18 @@
-import { VueComponent } from 'vue3-oop'
-import './app.scss'
-import logo from './oop.png'
+import { Component, VueComponent } from 'vue3-oop'
+import { ConfigProvider } from 'ant-design-vue'
+import zhCN from 'ant-design-vue/lib/locale/zh_CN'
+import { RouterView } from '@vue3-oop/vue-router'
+import { RouterService } from '@/router/router.service'
 
+@Component({
+  providers: [RouterService],
+})
 export class App extends VueComponent {
   render() {
     return (
-      <div class={'name'}>
-        app start
-        <img src={logo} width={'100'} />
-      </div>
+      <ConfigProvider locale={zhCN}>
+        <RouterView></RouterView>
+      </ConfigProvider>
     )
   }
 }
