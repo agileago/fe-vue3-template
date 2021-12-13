@@ -1,6 +1,7 @@
-import { VueComponent } from 'vue3-oop'
+import { Component, VueComponent } from 'vue3-oop'
 import { RouterLink } from '@vue3-oop/vue-router'
 
+@Component()
 export default class LoginView extends VueComponent {
   render() {
     return (

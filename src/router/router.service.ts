@@ -19,6 +19,7 @@ export class RouterService extends VueService {
 
   @Hook('BeforeUnmount')
   unmount() {
+    console.log(111)
     this.history.destroy()
   }
 }

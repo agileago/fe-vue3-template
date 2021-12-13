@@ -21,3 +21,4 @@ interface Window {
   /** 微前端分配的路有前缀 */
   __MICRO_APP_BASE_ROUTE__?: string
 }
+declare var __VUE_HMR_RUNTIME__: any

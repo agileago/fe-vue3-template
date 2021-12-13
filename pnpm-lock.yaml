@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@abraham/reflection': ^0.8.0
+  '@ant-design-vue/vue-jsx-hot-loader': ^0.1.4
   '@commitlint/cli': ^15.0.0
   '@types/swagger-schema-official': ^2.0.22
   '@types/webpack-env': ^1.16.3
@@ -12,6 +13,7 @@ specifiers:
   '@vue/cli-plugin-typescript': ~5.0.0-rc.1
   '@vue/cli-service': ~5.0.0-rc.1
   '@vue/eslint-config-typescript': ^9.1.0
+  '@vue3-oop/jsx-hot-loader': ^0.1.4
   '@vue3-oop/vue-router': ^4.0.11
   ant-design-vue: ^3.0.0-alpha.13
   axios: ^0.24.0
@@ -36,9 +38,9 @@ specifiers:
   ts-gear: ^4.2.1
   tslib: ^2.3.1
   typescript: ~4.5.3
-  vite: ^2.7.1
+  vite: ^2.7.2
   vue: ^3.2.13
-  vue3-oop: ^0.0.15
+  vue3-oop: ^0.0.16
   webpack-aliyun-oss: ^0.5.1
   yorkie: ^2.0.0
 
@@ -52,9 +54,10 @@ dependencies:
   path-to-regexp: 6.2.0
   tslib: 2.3.1
   vue: 3.2.24
-  vue3-oop: 0.0.15_997a5ed8533c1dfab547b50590482637
+  vue3-oop: 0.0.16_997a5ed8533c1dfab547b50590482637
 
 devDependencies:
+  '@ant-design-vue/vue-jsx-hot-loader': 0.1.4
   '@commitlint/cli': 15.0.0
   '@types/swagger-schema-official': 2.0.22
   '@types/webpack-env': 1.16.3
@@ -65,6 +68,7 @@ devDependencies:
   '@vue/cli-plugin-typescript': 5.0.0-rc.1_f716378ef660c722756496010d0f5ac9
   '@vue/cli-service': 5.0.0-rc.1_39b0e75ca36ed84ce894340b4cafb222
   '@vue/eslint-config-typescript': 9.1.0_abdffbad964e57e22aeb1346f1df57ad
+  '@vue3-oop/jsx-hot-loader': registry.npmjs.org/@vue3-oop/jsx-hot-loader/0.1.4
   babel-plugin-import: 1.13.3
   commitizen: 4.2.4
   commitlint-config-cz: 0.13.2_@commitlint+cli@15.0.0
@@ -82,7 +86,7 @@ devDependencies:
   serve: 13.0.2
   ts-gear: 4.2.1_axios@0.24.0+typescript@4.5.3
   typescript: 4.5.3
-  vite: 2.7.1_less@4.1.2+sass@1.45.0
+  vite: 2.7.2_less@4.1.2+sass@1.45.0
   webpack-aliyun-oss: 0.5.1
   yorkie: 2.0.0
 
@@ -91,6 +95,18 @@ packages:
   /@abraham/reflection/0.8.0:
     resolution: {integrity: sha1-+BA9GkoO17hGZo41g0wiwUBE4PE=, tarball: '@abraham/reflection/download/@abraham/reflection-0.8.0.tgz'}
     dev: false
+
+  /@ant-design-vue/vue-jsx-hot-loader/0.1.4:
+    resolution: {integrity: sha1-pLdy8wUqK4NIipqyMO8beI0W6nk=, tarball: '@ant-design-vue/vue-jsx-hot-loader/download/@ant-design-vue/vue-jsx-hot-loader-0.1.4.tgz'}
+    dependencies:
+      '@babel/parser': 7.16.4
+      '@babel/traverse': 7.16.3
+      hash-sum: 2.0.0
+      loader-utils: 2.0.2
+      lodash-es: 4.17.21
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /@ant-design/colors/5.1.1:
     resolution: {integrity: sha1-gAshhrHifmZDLmfQPtlq8+IdiUA=, tarball: '@ant-design/colors/download/@ant-design/colors-5.1.1.tgz'}
@@ -2282,7 +2298,7 @@ packages:
       '@vue/shared': 3.2.24
       estree-walker: 2.0.2
       magic-string: 0.25.7
-      postcss: 8.4.4
+      postcss: 8.4.5
       source-map: 0.6.1
     dev: false
 
@@ -5573,7 +5589,6 @@ packages:
     resolution: {integrity: sha1-6+iHGxo0nyMpTqp1G72CCaY251Q=, tarball: injection-js/download/injection-js-2.4.0.tgz}
     dependencies:
       tslib: 2.3.1
-    dev: false
 
   /inquirer/6.5.2:
     resolution: {integrity: sha1-rVCUI3XQNtMn/1KMCL1fqwiZKMo=, tarball: inquirer/download/inquirer-6.5.2.tgz}
@@ -6204,7 +6219,6 @@ packages:
 
   /lodash-es/4.17.21:
     resolution: {integrity: sha1-Q+YmxG5lkbd1C+srUBFzkMYJ4+4=, tarball: lodash-es/download/lodash-es-4.17.21.tgz}
-    dev: false
 
   /lodash.clonedeep/4.5.0:
     resolution: {integrity: sha1-4j8/nE+Pvd6HJSnBBxhXoIblzO8=, tarball: lodash.clonedeep/download/lodash.clonedeep-4.5.0.tgz}
@@ -7497,6 +7511,15 @@ packages:
 
   /postcss/8.4.4:
     resolution: {integrity: sha512-joU6fBsN6EIer28Lj6GDFoC/5yOZzLCfn0zHAn/MYXI7aPt4m4hK5KC5ovEZXy+lnCjmYIbQWngvju2ddyEr8Q==, tarball: postcss/download/postcss-8.4.4.tgz}
+    engines: {node: ^10 || ^12 || >=14}
+    dependencies:
+      nanoid: 3.1.30
+      picocolors: 1.0.0
+      source-map-js: 1.0.1
+    dev: true
+
+  /postcss/8.4.5:
+    resolution: {integrity: sha512-jBDboWM8qpaqwkMwItqTQTiFikhs/67OYVvblFFTM7MrZjt6yMKd6r2kgXizEbTTljacm4NldIlZnhbjr84QYg==, tarball: postcss/download/postcss-8.4.5.tgz}
     engines: {node: ^10 || ^12 || >=14}
     dependencies:
       nanoid: 3.1.30
@@ -9110,8 +9133,8 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  /vite/2.7.1_less@4.1.2+sass@1.45.0:
-    resolution: {integrity: sha512-TDXXhcu5lyQ6uosK4ZWaOyB4VzOiizk0biitRzDzaEtgSUi8rVYPc4k1xgOjLSf0OuceDJmojFKXHOX9DB1WuQ==, tarball: vite/download/vite-2.7.1.tgz}
+  /vite/2.7.2_less@4.1.2+sass@1.45.0:
+    resolution: {integrity: sha512-wMffVVdKZRZP/HwW3yttKL8X+IJePz7bUcnGm0vqljffpVwHpjWC3duZtJQHAGvy+wrTjmwU7vkULpZ1dVXY6w==, tarball: vite/download/vite-2.7.2.tgz}
     engines: {node: '>=12.2.0'}
     hasBin: true
     peerDependencies:
@@ -9128,7 +9151,7 @@ packages:
     dependencies:
       esbuild: 0.13.15
       less: 4.1.2
-      postcss: 8.4.4
+      postcss: 8.4.5
       resolve: 1.20.0
       rollup: 2.61.1
       sass: 1.45.0
@@ -9229,8 +9252,8 @@ packages:
       '@vue/shared': 3.2.24
     dev: false
 
-  /vue3-oop/0.0.15_997a5ed8533c1dfab547b50590482637:
-    resolution: {integrity: sha512-HtCKBa1xUPXizin02QtnzXX3pygUbAegIq+y6PkNjOZQWkcd+R9hNWk6AVYZeTbwi/GYwmHDIdRu3JiLiPFCYg==, tarball: vue3-oop/download/vue3-oop-0.0.15.tgz}
+  /vue3-oop/0.0.16_997a5ed8533c1dfab547b50590482637:
+    resolution: {integrity: sha512-/Ot56kxhpBX/lWOCwoQ7vScM17lijJEYS3wOEDVWFPVKixIkg5SW4GmgEp8hCPdSKpxnV17YyyWfw98Az6BpLQ==, tarball: vue3-oop/download/vue3-oop-0.0.16.tgz}
     peerDependencies:
       '@abraham/reflection': ^0.8.0
       injection-js: ^2.4.0
@@ -9645,4 +9668,19 @@ packages:
       is-ci: 1.2.1
       normalize-path: 1.0.0
       strip-indent: 2.0.0
+    dev: true
+
+  registry.npmjs.org/@vue3-oop/jsx-hot-loader/0.1.4:
+    resolution: {integrity: sha512-g73KILF5Im1RkKfre6iUy35ygElF3t9Xydotd5ynxjh4pmm1VA+F9VQ2FFFei8Ys43N4POIQ4aiZ4g31Ca0PRQ==, registry: https://registry.npmmirror.com/, tarball: https://registry.npmjs.org/@vue3-oop/jsx-hot-loader/-/jsx-hot-loader-0.1.4.tgz}
+    name: '@vue3-oop/jsx-hot-loader'
+    version: 0.1.4
+    dependencies:
+      '@babel/parser': 7.16.4
+      '@babel/traverse': 7.16.3
+      hash-sum: 2.0.0
+      injection-js: 2.4.0
+      loader-utils: 2.0.2
+      lodash-es: 4.17.21
+    transitivePeerDependencies:
+      - supports-color
     dev: true

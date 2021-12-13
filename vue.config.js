@@ -46,6 +46,11 @@ module.exports = defineConfig({
     })
   },
   configureWebpack: config => {
+    // 热更新
+    if (mode === 'development') {
+      const rule = config.module.rules.find(k => k.test.source === '\\.tsx$')
+      rule.use.push('@vue3-oop/jsx-hot-loader')
+    }
     // cdn
     // if (mode === 'prodcution') {
     //   config.plugins.unshift(
