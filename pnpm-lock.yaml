@@ -43,7 +43,7 @@ specifiers:
   vue: ^3.2.13
   vue3-oop: ^0.0.17
   webpack-aliyun-oss: ^0.5.1
-  yorkie: ^2.0.0
+  yorkie-pnpm: ^2.0.1
 
 dependencies:
   '@abraham/reflection': 0.8.0
@@ -90,7 +90,7 @@ devDependencies:
   typescript: 4.5.4
   vite: 2.7.2_less@4.1.2+sass@1.45.0
   webpack-aliyun-oss: 0.5.1
-  yorkie: 2.0.0
+  yorkie-pnpm: 2.0.1
 
 packages:
 
@@ -9659,6 +9659,17 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha1-ApTrPe4FAo0x7hpfosVWpqrxChs=, tarball: yocto-queue/download/yocto-queue-0.1.0.tgz}
     engines: {node: '>=10'}
+    dev: true
+
+  /yorkie-pnpm/2.0.1:
+    resolution: {integrity: sha512-6LoIZBsYD8ihS9Gccy4jr1XIyczNfwcW0URQoBP96i2VdYkD65YYFm6wAkeK1ehoGihnugWokDJsod8W4MBOjA==, tarball: yorkie-pnpm/download/yorkie-pnpm-2.0.1.tgz}
+    engines: {node: '>=4'}
+    requiresBuild: true
+    dependencies:
+      execa: 0.8.0
+      is-ci: 1.2.1
+      normalize-path: 1.0.0
+      strip-indent: 2.0.0
     dev: true
 
   /yorkie/2.0.0:
