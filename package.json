@@ -21,17 +21,18 @@
     "core-js": "^3.8.3",
     "injection-js": "^2.4.0",
     "path-to-regexp": "^6.2.0",
+    "ts-deepmerge": "^1.1.0",
+    "ts-essentials": "^9.0.0",
     "tslib": "^2.3.1",
     "vue": "^3.2.13",
-    "vue3-oop": "^0.0.16"
+    "vue3-oop": "^0.0.17"
   },
   "devDependencies": {
-    "@ant-design-vue/vue-jsx-hot-loader": "^0.1.4",
     "@commitlint/cli": "^15.0.0",
     "@types/swagger-schema-official": "^2.0.22",
     "@types/webpack-env": "^1.16.3",
-    "@typescript-eslint/eslint-plugin": "^5.4.0",
-    "@typescript-eslint/parser": "^5.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
     "@vue/cli-plugin-babel": "~5.0.0-rc.1",
     "@vue/cli-plugin-eslint": "~5.0.0-rc.1",
     "@vue/cli-plugin-typescript": "~5.0.0-rc.1",
@@ -54,7 +55,7 @@
     "sass-loader": "^12.0.0",
     "serve": "^13.0.2",
     "ts-gear": "^4.2.1",
-    "typescript": "~4.5.3",
+    "typescript": "~4.5.4",
     "vite": "^2.7.2",
     "webpack-aliyun-oss": "^0.5.1",
     "yorkie": "^2.0.0"

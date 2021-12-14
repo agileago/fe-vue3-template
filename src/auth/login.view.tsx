@@ -1,16 +1,38 @@
-import { Component, VueComponent } from 'vue3-oop'
-import { RouterLink } from '@vue3-oop/vue-router'
+import { Component, Ref, VueComponent } from 'vue3-oop'
+import { UserService } from '@/auth/user.service'
+import { Button, Col, Form, Input, Row } from 'ant-design-vue'
+
+interface LoginModel {
+  name: string
+  pwd: string
+}
 
 @Component()
 export default class LoginView extends VueComponent {
+  constructor(private userService: UserService) {
+    super()
+  }
+  @Ref() model: Partial<LoginModel> = {}
   render() {
     return (
-      <div>
-        login
-        <div>
-          <RouterLink to={'/list'}>list</RouterLink>
-        </div>
-      </div>
+      <Row type={'flex'} justify={'center'}>
+        <Col span={12}>
+          <h3 style={{ textAlign: 'center' }}>登录</h3>
+          <Form onSubmit={() => this.userService.login()}>
+            <Form.Item label={'名称'}>
+              <Input v-model:value={this.model.name}></Input>
+            </Form.Item>
+            <Form.Item label={'密码'}>
+              <Input v-model:value={this.model.pwd}></Input>
+            </Form.Item>
+            <Form.Item>
+              <Button type={'primary'} block htmlType={'submit'}>
+                登录
+              </Button>
+            </Form.Item>
+          </Form>
+        </Col>
+      </Row>
     )
   }
 }

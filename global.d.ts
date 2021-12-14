@@ -6,6 +6,7 @@ declare module '*.vue' {
 declare namespace __WebpackModuleApi {
   interface NodeProcess {
     VUE_CLI_SERVICE: any
+    // 环境变量
     env: {
      NODE_ENV: string
      VUE_APP_MODE: string
@@ -21,4 +22,6 @@ interface Window {
   /** 微前端分配的路有前缀 */
   __MICRO_APP_BASE_ROUTE__?: string
 }
+
+declare var __VUE_HMR_RUNTIME__: any
 declare var __VUE_HMR_RUNTIME__: any
