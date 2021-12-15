@@ -4,12 +4,12 @@ import zhCN from 'ant-design-vue/lib/locale/zh_CN'
 import { RouterView } from '@vue3-oop/vue-router'
 import { RouterService } from '@/router/router.service'
 import { UserService } from '@/auth/user.service'
-import { customBusinessInterceptor, customReuestToken } from '@/api/http'
+import { customBusinessInterceptor, HttpService } from '@/api/http'
 import { Provider } from 'injection-js'
 import { onUnmounted } from 'vue'
 
 const HttpProvider: Provider = {
-  provide: customReuestToken,
+  provide: HttpService,
   useFactory(routerService: RouterService, userService: UserService) {
     const clean = customBusinessInterceptor(routerService, userService)
     onUnmounted(clean)

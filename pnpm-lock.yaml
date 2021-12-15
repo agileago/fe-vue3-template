@@ -41,7 +41,7 @@ specifiers:
   typescript: ~4.5.4
   vite: ^2.7.2
   vue: ^3.2.13
-  vue3-oop: ^0.0.19
+  vue3-oop: ^0.1.1
   webpack-aliyun-oss: ^0.5.1
   yorkie-pnpm: ^2.0.1
 
@@ -57,7 +57,7 @@ dependencies:
   ts-essentials: 9.0.0_typescript@4.5.4
   tslib: 2.3.1
   vue: 3.2.24
-  vue3-oop: 0.0.19_997a5ed8533c1dfab547b50590482637
+  vue3-oop: 0.1.1_997a5ed8533c1dfab547b50590482637
 
 devDependencies:
   '@commitlint/cli': 15.0.0
@@ -6176,7 +6176,7 @@ packages:
     dev: true
 
   /loader-utils/1.4.0:
-    resolution: {integrity: sha1-xXm140yzSxp07cbB+za/o3HVphM=, tarball: loader-utils/download/loader-utils-1.4.0.tgz?cache=0&sync_timestamp=1636687924218&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Floader-utils%2Fdownload%2Floader-utils-1.4.0.tgz}
+    resolution: {integrity: sha1-xXm140yzSxp07cbB+za/o3HVphM=, tarball: loader-utils/download/loader-utils-1.4.0.tgz?cache=0&sync_timestamp=1636690676437&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Floader-utils%2Fdownload%2Floader-utils-1.4.0.tgz}
     engines: {node: '>=4.0.0'}
     dependencies:
       big.js: 5.2.2
@@ -6456,7 +6456,7 @@ packages:
     dev: true
 
   /mime/1.6.0:
-    resolution: {integrity: sha1-Ms2eXGRVO9WNGaVor0Uqz/BJgbE=, tarball: mime/download/mime-1.6.0.tgz}
+    resolution: {integrity: sha1-Ms2eXGRVO9WNGaVor0Uqz/BJgbE=, tarball: mime/download/mime-1.6.0.tgz?cache=0&sync_timestamp=1636370946189&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fmime%2Fdownload%2Fmime-1.6.0.tgz}
     engines: {node: '>=4'}
     hasBin: true
     dev: true
@@ -9254,8 +9254,8 @@ packages:
       '@vue/shared': 3.2.24
     dev: false
 
-  /vue3-oop/0.0.19_997a5ed8533c1dfab547b50590482637:
-    resolution: {integrity: sha512-4oWUK1ohmh8HQjda/zv7I9dMH9vLqRfEgTdwndk9yb4s1UJd85M08NyO6fiz5wXL3m5nqBGaO/BMn3DRM0Oerw==, tarball: vue3-oop/download/vue3-oop-0.0.19.tgz}
+  /vue3-oop/0.1.1_997a5ed8533c1dfab547b50590482637:
+    resolution: {integrity: sha512-qbMiulhofMAE8vRD9dfRKKgWXBNWaSpgJ1RewefWJCL7pezU/ivBecRc3Sa8cVlCCtL4JQCbfqp1JclaZNj6/w==, tarball: vue3-oop/download/vue3-oop-0.1.1.tgz}
     peerDependencies:
       '@abraham/reflection': ^0.8.0
       injection-js: ^2.4.0

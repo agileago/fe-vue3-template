@@ -136,6 +136,7 @@ export function customBusinessInterceptor(
     customRequest.interceptors.response.eject(ejectId2)
   }
 }
-export const customReuestToken = Symbol('customReuestToken')
+export interface HttpService extends AxiosInstance {}
+export abstract class HttpService implements AxiosInstance {}
 
 export const custom = createRequester(customRequest)

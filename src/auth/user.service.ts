@@ -19,7 +19,7 @@ export class UserService extends VueService {
   async login() {
     await new Promise(resolve => setTimeout(resolve, 1000))
     this.user = {
-      name: 'rjh',
+      name: 'rjh11',
       age: 18,
     }
     localStorage.setItem(TOKEN, JSON.stringify(this.user))
