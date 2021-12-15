@@ -25,7 +25,7 @@
     "ts-essentials": "^9.0.0",
     "tslib": "^2.3.1",
     "vue": "^3.2.13",
-    "vue3-oop": "^0.0.17"
+    "vue3-oop": "^0.0.19"
   },
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",

@@ -1,6 +1,7 @@
 import { Component, Ref, VueComponent } from 'vue3-oop'
 import { UserService } from '@/auth/user.service'
 import { Button, Col, Form, Input, Row } from 'ant-design-vue'
+import { SkipSelf } from 'injection-js'
 
 interface LoginModel {
   name: string
@@ -9,7 +10,7 @@ interface LoginModel {
 
 @Component()
 export default class LoginView extends VueComponent {
-  constructor(private userService: UserService) {
+  constructor(@SkipSelf() private userService: UserService) {
     super()
   }
   @Ref() model: Partial<LoginModel> = {}

@@ -41,7 +41,7 @@ specifiers:
   typescript: ~4.5.4
   vite: ^2.7.2
   vue: ^3.2.13
-  vue3-oop: ^0.0.17
+  vue3-oop: ^0.0.19
   webpack-aliyun-oss: ^0.5.1
   yorkie-pnpm: ^2.0.1
 
@@ -57,7 +57,7 @@ dependencies:
   ts-essentials: 9.0.0_typescript@4.5.4
   tslib: 2.3.1
   vue: 3.2.24
-  vue3-oop: 0.0.17_997a5ed8533c1dfab547b50590482637
+  vue3-oop: 0.0.19_997a5ed8533c1dfab547b50590482637
 
 devDependencies:
   '@commitlint/cli': 15.0.0
@@ -9254,8 +9254,8 @@ packages:
       '@vue/shared': 3.2.24
     dev: false
 
-  /vue3-oop/0.0.17_997a5ed8533c1dfab547b50590482637:
-    resolution: {integrity: sha512-e8W/trpcwMb6qYoY4hxjqRKkH4PALbcppAxSMz/y3t3AwRFjeetqw+mjia2dA14YqDnojg+ih3FbOUBMM3Fg2A==, tarball: vue3-oop/download/vue3-oop-0.0.17.tgz}
+  /vue3-oop/0.0.19_997a5ed8533c1dfab547b50590482637:
+    resolution: {integrity: sha512-4oWUK1ohmh8HQjda/zv7I9dMH9vLqRfEgTdwndk9yb4s1UJd85M08NyO6fiz5wXL3m5nqBGaO/BMn3DRM0Oerw==, tarball: vue3-oop/download/vue3-oop-0.0.19.tgz}
     peerDependencies:
       '@abraham/reflection': ^0.8.0
       injection-js: ^2.4.0
