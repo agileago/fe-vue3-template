@@ -18,4 +18,5 @@ switch (process.env.VUE_APP_MODE) {
     break
 }
 conf.env = process.env.VUE_APP_MODE
+
 export default conf

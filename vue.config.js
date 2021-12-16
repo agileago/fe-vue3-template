@@ -30,6 +30,7 @@ module.exports = defineConfig({
   productionSourceMap: false,
   publicPath,
   chainWebpack: config => {
+    config.plugins.delete('fork-ts-checker')
     config.plugin('html').tap(args => {
       args[0].minify = false
       return args

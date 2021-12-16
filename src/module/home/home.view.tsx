@@ -4,6 +4,10 @@ import styles from './home.module.scss'
 @Component()
 export default class HomeView extends VueComponent {
   render() {
-    return <div class={styles.home}>我是主页</div>
+    return (
+      <div class={styles.home}>
+        <span>1111</span>
+      </div>
+    )
   }
 }
