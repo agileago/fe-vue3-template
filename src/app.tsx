@@ -17,9 +17,7 @@ const HttpProvider: Provider = {
   deps: [RouterService, UserService],
 }
 
-@Component({
-  providers: [RouterService, UserService, HttpProvider],
-})
+@Component({ providers: [RouterService, UserService, HttpProvider] })
 export class App extends VueComponent {
   render() {
     return (
