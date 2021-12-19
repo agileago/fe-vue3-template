@@ -130,6 +130,7 @@ export function customBusinessInterceptor(
     if (res.status === 401) {
       routerService.router.push('/login')
     }
+    return res
   })
   return () => {
     customRequest.interceptors.request.eject(ejectId1)
