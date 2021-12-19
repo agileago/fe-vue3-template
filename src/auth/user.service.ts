@@ -1,4 +1,4 @@
-import { Ref, VueService } from 'vue3-oop'
+import { Track, VueService } from 'vue3-oop'
 import { RouterService } from '@/router/router.service'
 import { Injectable } from 'injection-js'
 
@@ -15,7 +15,7 @@ export class UserService extends VueService {
     super()
     this.guardRouter()
   }
-  @Ref() user? = this.getUser()
+  @Track() user? = this.getUser()
   async login() {
     await new Promise(resolve => setTimeout(resolve, 1000))
     this.user = {

@@ -1,4 +1,4 @@
-import { Component, Ref, VueComponent } from 'vue3-oop'
+import { Component, Track, VueComponent } from 'vue3-oop'
 import { UserService } from '@/auth/user.service'
 import { Button, Col, Form, Input, Row } from 'ant-design-vue'
 import { SkipSelf } from 'injection-js'
@@ -13,7 +13,7 @@ export default class LoginView extends VueComponent {
   constructor(@SkipSelf() private userService: UserService) {
     super()
   }
-  @Ref() model: Partial<LoginModel> = {}
+  @Track() model: Partial<LoginModel> = {}
   render() {
     return (
       <Row type={'flex'} justify={'center'}>
