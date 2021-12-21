@@ -137,6 +137,7 @@ export function customBusinessInterceptor(
     customRequest.interceptors.response.eject(ejectId2)
   }
 }
+
 export interface HttpService extends AxiosInstance {}
 export abstract class HttpService implements AxiosInstance {}
 

@@ -1,9 +1,6 @@
 import '@abraham/reflection'
 import { App, createApp } from 'vue'
 import { App as Bootstrap } from '@/app'
-import config from '@/config'
-
-console.log(config.env)
 
 let app: App<Element> | null
 
