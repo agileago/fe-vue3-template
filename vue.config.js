@@ -16,7 +16,7 @@ let publicPath = ''
 switch (mode) {
   case 'development':
     // 微前端需要加完整路径
-    publicPath = 'http://localhost:8080'
+    // publicPath = 'http://localhost:8080'
     break
   case 'production':
     // publicPath = CDN.HOST + CDN.OSS_DIR
