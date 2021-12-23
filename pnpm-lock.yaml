@@ -4,6 +4,7 @@ specifiers:
   '@abraham/reflection': ^0.8.0
   '@babel/core': ^7.16.5
   '@commitlint/cli': ^15.0.0
+  '@nexhome/yorkie': ^2.0.8
   '@types/swagger-schema-official': ^2.0.22
   '@types/webpack-env': ^1.16.3
   '@typescript-eslint/eslint-plugin': ^5.8.0
@@ -13,7 +14,7 @@ specifiers:
   '@vue/cli-plugin-typescript': ~5.0.0-rc.1
   '@vue/cli-service': ~5.0.0-rc.1
   '@vue/compiler-sfc': ^3.2.26
-  '@vue/eslint-config-typescript': ^9.1.0
+  '@vue/eslint-config-typescript': ^10.0.0
   '@vue3-oop/jsx-hot-loader': ^0.1.6
   '@vue3-oop/vue-router': ^4.0.11
   ant-design-vue: ^3.0.0-alpha.13
@@ -47,7 +48,6 @@ specifiers:
   vue3-oop: ^0.2.2
   webpack: ^5.65.0
   webpack-aliyun-oss: ^0.5.1
-  yorkie-pnpm: ^2.0.1
 
 dependencies:
   '@abraham/reflection': 0.8.0
@@ -66,6 +66,7 @@ dependencies:
 devDependencies:
   '@babel/core': 7.16.5
   '@commitlint/cli': 15.0.0
+  '@nexhome/yorkie': 2.0.8
   '@types/swagger-schema-official': 2.0.22
   '@types/webpack-env': 1.16.3
   '@typescript-eslint/eslint-plugin': 5.8.0_836011a006f4f5d67178564baf2b6d34
@@ -75,7 +76,7 @@ devDependencies:
   '@vue/cli-plugin-typescript': 5.0.0-rc.1_651b17450722922436a65a93c7dc797b
   '@vue/cli-service': 5.0.0-rc.1_a74a03b39886f3f55d92db4be2e0ef8b
   '@vue/compiler-sfc': 3.2.26
-  '@vue/eslint-config-typescript': 9.1.0_d3aed4c9dae7615b020b4f133941a9fb
+  '@vue/eslint-config-typescript': 10.0.0_41e1ec30d0187917d0a0a293146dcb64
   '@vue3-oop/jsx-hot-loader': 0.1.6
   babel-plugin-import: 1.13.3
   co: 4.6.0
@@ -98,7 +99,6 @@ devDependencies:
   vite: 2.7.6_less@4.1.2+sass@1.45.1
   webpack: 5.65.0
   webpack-aliyun-oss: 0.5.1_co@4.6.0
-  yorkie-pnpm: 2.0.1
 
 packages:
 
@@ -1523,6 +1523,17 @@ packages:
     resolution: {integrity: sha1-tSBSnsIdjllFoYUd/Rwy6U45/0U=, tarball: '@humanwhocodes/object-schema/download/@humanwhocodes/object-schema-1.2.1.tgz'}
     dev: true
 
+  /@nexhome/yorkie/2.0.8:
+    resolution: {integrity: sha1-M8AqKP6E5vDHNmQUYNUUMM3CoNs=, tarball: '@nexhome/yorkie/download/@nexhome/yorkie-2.0.8.tgz'}
+    engines: {node: '>=4'}
+    requiresBuild: true
+    dependencies:
+      execa: 0.8.0
+      is-ci: 1.2.1
+      normalize-path: 1.0.0
+      strip-indent: 2.0.0
+    dev: true
+
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha1-dhnC6yGyVIP20WdUi0z9WnSIw9U=, tarball: '@nodelib/fs.scandir/download/@nodelib/fs.scandir-2.1.5.tgz'}
     engines: {node: '>= 8'}
@@ -2383,12 +2394,10 @@ packages:
     resolution: {integrity: sha512-R2rfiRY+kZugzWh9ZyITaovx+jpU4vgivAEAiz80kvh3yviiTU3CBuGuyWpSwGz9/C7TkSWVM/FtQRGlZ16n8Q==, tarball: '@vue/devtools-api/download/@vue/devtools-api-6.0.0-beta.20.1.tgz'}
     dev: false
 
-  /@vue/eslint-config-typescript/9.1.0_d3aed4c9dae7615b020b4f133941a9fb:
-    resolution: {integrity: sha512-j/852/ZYQ5wDvCD3HE2q4uqJwJAceer2FwoEch1nFo+zTOsPrbzbE3cuWIs3kvu5hdFsGTMYwRwjI6fqZKDMxQ==, tarball: '@vue/eslint-config-typescript/download/@vue/eslint-config-typescript-9.1.0.tgz'}
+  /@vue/eslint-config-typescript/10.0.0_41e1ec30d0187917d0a0a293146dcb64:
+    resolution: {integrity: sha512-F94cL8ug3FaYXlCfU5/wiGjk1qeadmoBpRGAOBq+qre3Smdupa59dd6ZJrsfRODpsMPyTG7330juMDsUvpZ3Rw==, tarball: '@vue/eslint-config-typescript/download/@vue/eslint-config-typescript-10.0.0.tgz'}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
-      '@typescript-eslint/eslint-plugin': ^5.0.0
-      '@typescript-eslint/parser': ^5.0.0
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
       eslint-plugin-vue: ^8.0.1
     dependencies:
@@ -2399,6 +2408,7 @@ packages:
       vue-eslint-parser: 8.0.1_eslint@8.5.0
     transitivePeerDependencies:
       - supports-color
+      - typescript
     dev: true
 
   /@vue/reactivity-transform/3.2.26:
@@ -9786,17 +9796,6 @@ packages:
   /yocto-queue/0.1.0:
     resolution: {integrity: sha1-ApTrPe4FAo0x7hpfosVWpqrxChs=, tarball: yocto-queue/download/yocto-queue-0.1.0.tgz}
     engines: {node: '>=10'}
-    dev: true
-
-  /yorkie-pnpm/2.0.1:
-    resolution: {integrity: sha512-6LoIZBsYD8ihS9Gccy4jr1XIyczNfwcW0URQoBP96i2VdYkD65YYFm6wAkeK1ehoGihnugWokDJsod8W4MBOjA==, tarball: yorkie-pnpm/download/yorkie-pnpm-2.0.1.tgz}
-    engines: {node: '>=4'}
-    requiresBuild: true
-    dependencies:
-      execa: 0.8.0
-      is-ci: 1.2.1
-      normalize-path: 1.0.0
-      strip-indent: 2.0.0
     dev: true
 
   /yorkie/2.0.0:
