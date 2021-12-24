@@ -1,10 +1,29 @@
-import { VueComponent } from 'vue3-oop'
-import styles from './home.module.scss'
+import { Component, Mut, VueComponent, VueService } from 'vue3-oop'
+import './home.scss'
+import axios from 'axios'
+import exports from 'webpack'
 
-class HomeView extends VueComponent {
-  render() {
-    return <div class={styles.home}>111</div>
+class CountService extends VueService {
+  @Mut() count = 1
+  add() {
+    this.count++
+  }
+  remove() {
+    this.count--
   }
 }
 
-export default HomeView
+@Component()
+export default class HomeView extends VueComponent {
+  constructor(private countService: CountService) {
+    super()
+    this.mount()
+  }
+  async mount() {
+    const res = await axios.get('/api/login')
+    console.log(res)
+  }
+  render() {
+    return <div onClick={() => this.countService.add()}>{this.countService.count}</div>
+  }
+}

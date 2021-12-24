@@ -98,4 +98,7 @@ module.exports = defineConfig({
       // },
     },
   },
+  pluginOptions: {
+    mock: { debug: true },
+  },
 })
