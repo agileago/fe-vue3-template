@@ -7,18 +7,24 @@ import { UserService } from '@/auth/user.service'
 import { customBusinessInterceptor, HttpService } from '@/api/http'
 import { Provider } from 'injection-js'
 import { onUnmounted } from 'vue'
+import RouterStart from '@/router'
 
 const HttpProvider: Provider = {
   provide: HttpService,
   useFactory(routerService: RouterService, userService: UserService) {
-    const clean = customBusinessInterceptor(routerService, userService)
+    const [http, clean] = customBusinessInterceptor(routerService, userService)
     onUnmounted(clean)
+    return http
   },
   deps: [RouterService, UserService],
 }
 
-@Component({ providers: [RouterService, UserService, HttpProvider] })
+@Component({ providers: [RouterService, RouterStart, UserService, HttpProvider] })
 export class App extends VueComponent {
+  // 此处的服务优先执行
+  constructor(private routerStart: RouterStart, private httpService: HttpService) {
+    super()
+  }
   render() {
     return (
       <ConfigProvider locale={zhCN}>

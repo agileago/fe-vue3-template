@@ -14,13 +14,14 @@ declare namespace __WebpackModuleApi {
     }
   }
 }
-interface Window {
-  /** 是否在微前端环境 */
-  __MICRO_APP_ENVIRONMENT__?: boolean
-  /** 微前端分配的名字 */
-  __MICRO_APP_NAME__?: string
-  /** 微前端分配的路有前缀 */
-  __MICRO_APP_BASE_ROUTE__?: string
+
+// 环境变量定义
+interface ImportMetaEnv
+  extends Readonly<Record<string, string | boolean | undefined>> {
+  // 更多环境变量...
+}
+interface ImportMeta {
+  readonly env: ImportMetaEnv
 }
 
 declare var __VUE_HMR_RUNTIME__: any

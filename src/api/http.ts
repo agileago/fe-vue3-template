@@ -41,10 +41,7 @@ export const parseUrl = (url: string, option?: RequestParameter): string => {
  * @param url
  * @param option
  */
-export function interceptRequest(
-  url: string,
-  option?: RequestParameter,
-): [string, AxiosRequestConfig] {
+export function interceptRequest(url: string, option?: RequestParameter): [string, AxiosRequestConfig] {
   try {
     url = parseUrl(url, option)
   } catch (e: any) {
@@ -77,11 +74,7 @@ export function interceptRequest(
  * @param ax
  */
 export const createRequester = (ax: AxiosInstance) => {
-  return <T>(
-    apiUrl: string,
-    param: RequestParameter,
-    config: AxiosRequestConfig = {},
-  ) => {
+  return <T>(apiUrl: string, param: RequestParameter, config: AxiosRequestConfig = {}) => {
     // eslint-disable-next-line prefer-const
     let [url, option] = interceptRequest(apiUrl, param)
     option = { url, ...option, ...config }
@@ -117,10 +110,7 @@ customRequest.interceptors.response.use(res => {
   return data?.entity
 })
 
-export function customBusinessInterceptor(
-  routerService: RouterService,
-  userService: UserService,
-) {
+export function customBusinessInterceptor(routerService: RouterService, userService: UserService) {
   const ejectId1 = customRequest.interceptors.request.use(config => {
     config.data = config.data || {}
     config.data.aaa = userService.user?.name
@@ -132,10 +122,11 @@ export function customBusinessInterceptor(
     }
     return res
   })
-  return () => {
+  const clean = () => {
     customRequest.interceptors.request.eject(ejectId1)
     customRequest.interceptors.response.eject(ejectId2)
   }
+  return [customRequest, clean] as const
 }
 
 export interface HttpService extends AxiosInstance {}

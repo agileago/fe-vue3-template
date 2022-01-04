@@ -4,4 +4,3 @@ module.exports = {
     token: 'aaaa',
   },
 }
-console.log(11111)

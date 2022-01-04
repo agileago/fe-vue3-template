@@ -6,7 +6,7 @@ import deepMerge from 'ts-deepmerge'
 
 let conf = defaultConf
 const mergeOpt = { mergeArrays: false }
-switch (process.env.VUE_APP_MODE) {
+switch (import.meta.env.MODE) {
   case 'development':
     conf = deepMerge.withOptions(mergeOpt, defaultConf, developmentConf)
     break
@@ -17,6 +17,6 @@ switch (process.env.VUE_APP_MODE) {
     conf = deepMerge.withOptions(mergeOpt, defaultConf, productionConf)
     break
 }
-conf.env = process.env.VUE_APP_MODE
+conf.env = import.meta.env.MODE
 
 export default conf

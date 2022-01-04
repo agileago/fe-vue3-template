@@ -15,8 +15,6 @@ const CDN = {
 let publicPath = ''
 switch (mode) {
   case 'development':
-    // 微前端需要加完整路径
-    // publicPath = 'http://localhost:8080'
     break
   case 'production':
     // publicPath = CDN.HOST + CDN.OSS_DIR
@@ -44,6 +42,15 @@ module.exports = defineConfig({
           options.transpileOnly = false
           return options
         })
+    })
+    config.plugin('define').tap(definitions => {
+      Object.assign(definitions[0]['process.env'], {
+        MODE: JSON.stringify(mode),
+        DEV: command === 'serve',
+        PROD: command === 'build',
+        BASE_URL: publicPath,
+      })
+      return definitions
     })
   },
   configureWebpack: config => {
@@ -97,8 +104,5 @@ module.exports = defineConfig({
       //   },
       // },
     },
-  },
-  pluginOptions: {
-    mock: { debug: true },
   },
 })

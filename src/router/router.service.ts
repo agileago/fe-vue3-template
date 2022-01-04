@@ -1,19 +1,19 @@
 import { getCurrentApp, Hook, VueService } from 'vue3-oop'
-import { createRouter, createWebHistory } from '@vue3-oop/vue-router'
-import { routes } from '@/router/routes'
+import { createRouter, createWebHistory, Router, RouteRecordRaw } from '@vue3-oop/vue-router'
 
 export class RouterService extends VueService {
-  history = createWebHistory(window.__MICRO_APP_BASE_ROUTE__)
-  router = createRouter({
-    history: this.history,
-    routes,
-  })
+  history = createWebHistory()
+  router!: Router
   get currentRoute() {
     return this.router.currentRoute.value
   }
   app = getCurrentApp()!
-  constructor() {
-    super()
+  // 为了解决热更新循环引用,采用函数传参初始化
+  initRouter(routes: RouteRecordRaw[]) {
+    this.router = createRouter({
+      history: this.history,
+      routes,
+    })
     this.app.use(this.router)
   }
 
