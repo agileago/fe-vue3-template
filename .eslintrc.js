@@ -17,5 +17,6 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
+    '@typescript-eslint/no-empty-function': 'off',
   },
 }

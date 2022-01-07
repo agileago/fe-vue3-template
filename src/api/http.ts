@@ -1,8 +1,6 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios'
 import * as pathToRegexp from 'path-to-regexp'
 import type { RequestParameter } from 'ts-gear'
-import type { RouterService } from '@/router/router.service'
-import type { UserService } from '@/auth/user.service'
 
 // region 基础方法 基本不需要动
 interface ReturnMessageArg {
@@ -99,37 +97,8 @@ declare module 'axios' {
 }
 
 // 自定义
-const customRequest = axios.create({
+export const customRequest = axios.create({
   baseURL: process.env.NODE_ENV === 'development' ? '/api' : '',
 })
-customRequest.interceptors.response.use(res => {
-  const data = res.data
-  if (data?.code !== 1) {
-    throw new Error(data?.msg)
-  }
-  return data?.entity
-})
-
-export function customBusinessInterceptor(routerService: RouterService, userService: UserService) {
-  const ejectId1 = customRequest.interceptors.request.use(config => {
-    config.data = config.data || {}
-    config.data.aaa = userService.user?.name
-    return config
-  })
-  const ejectId2 = customRequest.interceptors.response.use(res => {
-    if (res.status === 401) {
-      routerService.router.push('/login')
-    }
-    return res
-  })
-  const clean = () => {
-    customRequest.interceptors.request.eject(ejectId1)
-    customRequest.interceptors.response.eject(ejectId2)
-  }
-  return [customRequest, clean] as const
-}
-
-export interface HttpService extends AxiosInstance {}
-export abstract class HttpService implements AxiosInstance {}
 
 export const custom = createRequester(customRequest)
