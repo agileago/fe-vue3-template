@@ -1,13 +1,14 @@
-import { Component, VueComponent } from 'vue3-oop'
-import { ConfigProvider } from 'ant-design-vue'
-import zhCN from 'ant-design-vue/lib/locale/zh_CN'
-import { RouterView } from '@vue3-oop/vue-router'
+import '@abraham/reflection'
+import { createApp, onUnmounted } from 'vue'
+import { Provider } from 'injection-js'
+import { customBusinessInterceptor, HttpService } from '@/api/http'
 import { RouterService } from '@/router/router.service'
 import { UserService } from '@/auth/user.service'
-import { customBusinessInterceptor, HttpService } from '@/api/http'
-import { Provider } from 'injection-js'
-import { onUnmounted } from 'vue'
+import { Component, VueComponent } from 'vue3-oop'
 import RouterStart from '@/router'
+import { ConfigProvider } from 'ant-design-vue'
+import zhCN from 'ant-design-vue/lib/locale/zh_CN'
+import { RouterView } from 'vue-router'
 
 const HttpProvider: Provider = {
   provide: HttpService,
@@ -20,7 +21,7 @@ const HttpProvider: Provider = {
 }
 
 @Component({ providers: [RouterService, RouterStart, UserService, HttpProvider] })
-export class App extends VueComponent {
+class App extends VueComponent {
   // 此处的服务优先执行
   constructor(private routerStart: RouterStart, private httpService: HttpService) {
     super()
@@ -33,3 +34,6 @@ export class App extends VueComponent {
     )
   }
 }
+
+const app = createApp(App)
+app.mount('#app')
