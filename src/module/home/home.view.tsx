@@ -1,5 +1,6 @@
 import { Component, Mut, VueComponent, VueService } from 'vue3-oop'
 import './home.scss'
+import { Button } from 'ant-design-vue'
 
 class CountService extends VueService {
   @Mut() count = 1
