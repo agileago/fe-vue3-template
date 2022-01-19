@@ -18,6 +18,6 @@ export default class HomeView extends VueComponent {
   }
   render() {
     const { countService } = this
-    return <div onClick={() => countService.add()}>{this.countService.count}</div>
+    return <Button onClick={() => countService.add()}>啊啊啊啊啊{this.countService.count}</Button>
   }
 }
