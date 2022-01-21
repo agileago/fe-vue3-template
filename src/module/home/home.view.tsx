@@ -1,14 +1,11 @@
-import { Component, Mut, VueComponent, VueService } from 'vue3-oop'
-import './home.scss'
+import { Autobind, Component, Mut, VueComponent, VueService } from 'vue3-oop'
 import { Button } from 'ant-design-vue'
 
 class CountService extends VueService {
   @Mut() count = 1
+  @Autobind()
   add() {
     this.count++
-  }
-  remove() {
-    this.count--
   }
 }
 
@@ -19,6 +16,6 @@ export default class HomeView extends VueComponent {
   }
   render() {
     const { countService } = this
-    return <Button onClick={() => countService.add()}>啊啊啊啊啊{this.countService.count}</Button>
+    return <Button onClick={countService.add}>{countService.count}</Button>
   }
 }

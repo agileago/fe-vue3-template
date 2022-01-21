@@ -27,22 +27,12 @@ module.exports = defineConfig({
   lintOnSave: false,
   productionSourceMap: false,
   publicPath,
+  transpileDependencies: true,
   chainWebpack: config => {
     config.entry('app').clear().add('./src/main.tsx')
-    config.plugins.delete('fork-ts-checker')
     config.plugin('html').tap(args => {
       args[0].minify = false
       return args
-    })
-    // ts 编译时启用全局编译，类似 tsc, 对类型的metadata友好
-    ;['ts', 'tsx'].forEach(ext => {
-      config.module
-        .rule(ext)
-        .use('ts-loader')
-        .tap(options => {
-          options.transpileOnly = false
-          return options
-        })
     })
     config.plugin('define').tap(definitions => {
       Object.assign(definitions[0]['process.env'], {
@@ -53,6 +43,17 @@ module.exports = defineConfig({
       })
       return definitions
     })
+    // ts 编译时启用全局编译，类似 tsc, 对类型的metadata友好
+    // config.plugins.delete('fork-ts-checker')
+    // ;['ts', 'tsx'].forEach(ext => {
+    //   config.module
+    //     .rule(ext)
+    //     .use('ts-loader')
+    //     .tap(options => {
+    //       options.transpileOnly = false
+    //       return options
+    //     })
+    // })
   },
   configureWebpack: config => {
     // 热更新
