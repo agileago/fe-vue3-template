@@ -21,7 +21,7 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
+    "lib": ["esnext", "dom"],
     "noEmitOnError": false
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx", "global.d.ts"],

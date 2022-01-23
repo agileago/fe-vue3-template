@@ -43,23 +43,12 @@ module.exports = defineConfig({
       })
       return definitions
     })
-    // ts 编译时启用全局编译，类似 tsc, 对类型的metadata友好
-    // config.plugins.delete('fork-ts-checker')
-    // ;['ts', 'tsx'].forEach(ext => {
-    //   config.module
-    //     .rule(ext)
-    //     .use('ts-loader')
-    //     .tap(options => {
-    //       options.transpileOnly = false
-    //       return options
-    //     })
-    // })
   },
   configureWebpack: config => {
-    // 热更新
+    // 类组件热更新
     if (mode === 'development') {
       const rule = config.module.rules.find(k => k.test.source === '\\.tsx$')
-      rule.use.push('@vue3-oop/jsx-hot-loader')
+      rule?.use.push('@vue3-oop/jsx-hot-loader')
     }
     // cdn
     // if (mode === 'prodcution') {

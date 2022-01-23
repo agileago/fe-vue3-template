@@ -26,7 +26,7 @@ export class UserService extends VueService {
     this.routerService.router.replace({ path: '/' })
   }
   guardRouter() {
-    this.routerService.router.beforeEach(async (to, frome) => {
+    this.routerService.router.beforeEach(async (to, from) => {
       if (!this.user && to.fullPath !== '/login') return { path: '/login' }
     })
   }
