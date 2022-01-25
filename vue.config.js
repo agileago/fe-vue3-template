@@ -27,7 +27,7 @@ module.exports = defineConfig({
   lintOnSave: false,
   productionSourceMap: false,
   publicPath,
-  transpileDependencies: true,
+  transpileDependencies: false,
   chainWebpack: config => {
     config.entry('app').clear().add('./src/main.tsx')
     config.plugin('html').tap(args => {
@@ -39,7 +39,7 @@ module.exports = defineConfig({
         MODE: JSON.stringify(mode),
         DEV: command === 'serve',
         PROD: command === 'build',
-        BASE_URL: publicPath,
+        BASE_URL: JSON.stringify(publicPath),
       })
       return definitions
     })

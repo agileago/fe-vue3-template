@@ -16,6 +16,7 @@
     "emitDecoratorMetadata": true,
     "isolatedModules": true,
     "importsNotUsedAsValues": "error",
+    "preserveValueImports": true,
     "sourceMap": true,
     "baseUrl": ".",
     "types": ["webpack-env", "vite/client"],
