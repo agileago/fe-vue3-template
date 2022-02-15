@@ -23,6 +23,7 @@ export default class HomeView extends VueComponent {
         <Button type={'primary'} onClick={() => (this.showModal = true)}>
           打开弹窗
         </Button>
+        <p class="tw-text-center">hellow</p>
         <Modal v-model:visible={this.showModal} onOk={() => (this.showModal = false)}>
           <Button onClick={countService.add}>{countService.count}</Button>
         </Modal>

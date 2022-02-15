@@ -25,9 +25,8 @@ publicPath = publicPath + '/'
 
 module.exports = defineConfig({
   lintOnSave: false,
-  productionSourceMap: false,
   publicPath,
-  transpileDependencies: false,
+  transpileDependencies: true,
   chainWebpack: config => {
     config.entry('app').clear().add('./src/main.tsx')
     config.plugin('html').tap(args => {

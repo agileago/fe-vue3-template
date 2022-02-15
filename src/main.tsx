@@ -1,3 +1,4 @@
+import './theme/main.scss'
 import '@abraham/reflection'
 import { createApp } from 'vue'
 import { RouterService } from '@/router/router.service'
