@@ -26,6 +26,7 @@ publicPath = publicPath + '/'
 module.exports = defineConfig({
   lintOnSave: false,
   publicPath,
+  productionSourceMap: false,
   transpileDependencies: true,
   chainWebpack: config => {
     config.entry('app').clear().add('./src/main.tsx')

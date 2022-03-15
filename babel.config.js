@@ -6,7 +6,6 @@ module.exports = {
         jsx: false,
       },
     ],
-    'babel-preset-vite',
   ],
   plugins: [
     ['@vue3-oop/babel-plugin-jsx', { enableObjectSlots: false, slotStable: true }],
