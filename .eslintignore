@@ -4,9 +4,4 @@ dist
 coverage
 public
 *.d.ts
-vue.config.js
-.eslintrc.js
-postcss.config.js
-tailwind.config.js
-.prettierrc.js
-vue.config.js
+*.js
