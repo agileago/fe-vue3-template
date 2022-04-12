@@ -14,9 +14,10 @@ export default class LoginView extends VueComponent {
     super()
   }
   @Mut() model: Partial<LoginModel> = {}
+
   render() {
     return (
-      <Row type={'flex'} justify={'center'}>
+      <Row justify={'center'}>
         <Col span={12}>
           <h3 style={{ textAlign: 'center' }}>登录</h3>
           <Form onSubmit={() => this.userService.login()}>
