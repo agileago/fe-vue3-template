@@ -60,7 +60,7 @@
     "sass-loader": "^12.6.0",
     "serve": "^13.0.2",
     "tailwindcss": "^3.0.23",
-    "ts-gear": "^4.6.1",
+    "ts-gear": "^4.7.1",
     "typescript": "~4.6.3",
     "vite": "^2.9.1",
     "vue-cli-plugin-mock": "^1.0.3",

@@ -40,7 +40,7 @@ specifiers:
   tailwindcss: ^3.0.23
   ts-deepmerge: ^2.0.1
   ts-essentials: ^9.1.2
-  ts-gear: ^4.6.1
+  ts-gear: ^4.7.1
   tslib: ^2.3.1
   typescript: ~4.6.3
   vite: ^2.9.1
@@ -97,7 +97,7 @@ devDependencies:
   sass-loader: 12.6.0_sass@1.50.0+webpack@5.72.0
   serve: 13.0.2
   tailwindcss: 3.0.23_autoprefixer@10.4.4
-  ts-gear: 4.6.1_axios@0.26.1+typescript@4.6.3
+  ts-gear: 4.7.1_axios@0.26.1+typescript@4.6.3
   typescript: 4.6.3
   vite: 2.9.1_less@4.1.2+sass@1.50.0
   vue-cli-plugin-mock: 1.0.3
@@ -3794,6 +3794,14 @@ packages:
     resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
     dev: true
 
+  /cross-fetch/3.1.5:
+    resolution: {integrity: sha512-lvb1SBsI0Z7GDwmuid+mU3kWVBwTVUbe7S0H52yaaAdQOXq2YktTCZdlAcNKFzE6QtRz0snpw9bNiPeOIkkQvw==}
+    dependencies:
+      node-fetch: 2.6.7
+    transitivePeerDependencies:
+      - encoding
+    dev: true
+
   /cross-spawn/5.1.0:
     resolution: {integrity: sha512-pTgQJ5KC0d2hcY8eyL1IzlBPYjTkyH72XRZPnLyKus2mBfNjQs3klqbJU2VILqZryAZUt9JOb3h/mWMy23/f5A==}
     dependencies:
@@ -4858,7 +4866,7 @@ packages:
       body-parser: 1.19.1
       chalk: 2.4.2
       debug: 3.2.7
-      path-to-regexp: 2.2.1
+      path-to-regexp: 2.4.0
     dev: true
 
   /express/4.17.3:
@@ -5948,15 +5956,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /isomorphic-fetch/3.0.0:
-    resolution: {integrity: sha512-qvUtwJ3j6qwsF3jLxkZ72qCgjMysPzDfeV240JHiGZsANBYd+EEuu35v7dfrJ9Up0Ak07D7GGSkGhCHTqg/5wA==}
-    dependencies:
-      node-fetch: 2.6.7
-      whatwg-fetch: 3.6.2
-    transitivePeerDependencies:
-      - encoding
-    dev: true
-
   /isstream/0.1.2:
     resolution: {integrity: sha512-Yljz7ffyPbrLpLngrMtZ7NduUgVvi6wG9RJ9IUcyCd59YQ911PBJphODUcbOVbqYfxe1wuYf/LJ8PauMRwsM/g==}
     dev: true
@@ -6044,14 +6043,6 @@ packages:
 
   /json5/1.0.1:
     resolution: {integrity: sha512-aKS4WQjPenRxiQsC93MNfjx+nbF4PAdYzmd/1JIj8HYzqfbu86beTuNgXDzPknWk0n0uARlyewZo4s++ES36Ow==}
-    hasBin: true
-    dependencies:
-      minimist: 1.2.6
-    dev: true
-
-  /json5/2.2.0:
-    resolution: {integrity: sha512-f+8cldu7X/y7RAJurMEJmdoKXGB/X550w2Nr3tTbezL6RwEE/iMcm+tZnXeoZtKuOq6ft8+CqzEkrIgx1fPoQA==}
-    engines: {node: '>=6'}
     hasBin: true
     dependencies:
       minimist: 1.2.6
@@ -7185,6 +7176,10 @@ packages:
 
   /path-to-regexp/2.2.1:
     resolution: {integrity: sha512-gu9bD6Ta5bwGrrU8muHzVOBFFREpp2iRkVfhBJahwJ6p6Xw20SjT0MxLnwkjOibQmGSYhiUnf2FLe7k+jcFmGQ==}
+    dev: true
+
+  /path-to-regexp/2.4.0:
+    resolution: {integrity: sha512-G6zHoVqC6GGTQkZwF4lkuEyMbVOjoBKAEybQUypI1WTkqinCOrq2x6U2+phkJ1XsEMTy4LjtwPI7HW+NVrRR2w==}
     dev: true
 
   /path-to-regexp/3.2.0:
@@ -9025,21 +9020,21 @@ packages:
       typescript: 4.6.3
     dev: false
 
-  /ts-gear/4.6.1_axios@0.26.1+typescript@4.6.3:
-    resolution: {integrity: sha512-BpSLuPEQM5Osy7akpQ8+ppBSKXpam+6qK0PZv6MTNjLbKxBuioN6XkSvl7NjPBEjfuY+PzrcTQZQj7bXry3Ulg==}
+  /ts-gear/4.7.1_axios@0.26.1+typescript@4.6.3:
+    resolution: {integrity: sha512-oT7U+Wv0iDd6HDP7cYW4HEiocYqaqCZveKTTFj9Eae+So8I6tSORSRciboSG21tz82ibx8dJ7o5uhPbz6cA3UA==}
     hasBin: true
     peerDependencies:
-      axios: ^0.21.1
-      typescript: '> 4.0.0'
+      axios: latest
+      typescript: latest
     dependencies:
       app-root-path: 3.0.0
       axios: 0.26.1
       chalk: 2.4.2
       commander: 8.3.0
       cosmiconfig: 5.2.1
+      cross-fetch: 3.1.5
       fs-extra: 7.0.1
-      isomorphic-fetch: 3.0.0
-      json5: 2.2.0
+      json5: 2.2.1
       lodash: 4.17.21
       mkdirp: 1.0.4
       openapi3-ts: 1.4.0
@@ -9051,10 +9046,9 @@ packages:
       traverse: 0.6.6
       ts-morph: 11.0.3
       ts-node: 8.10.2_typescript@4.6.3
-      tsconfig-paths: 3.14.0
+      tsconfig-paths: 3.14.1
       typescript: 4.6.3
       url-join: 4.0.1
-      whatwg-fetch: 3.6.2
     transitivePeerDependencies:
       - encoding
     dev: true
@@ -9127,8 +9121,8 @@ packages:
       yn: 3.1.1
     dev: true
 
-  /tsconfig-paths/3.14.0:
-    resolution: {integrity: sha512-cg/1jAZoL57R39+wiw4u/SCC6Ic9Q5NqjBOb+9xISedOYurfog9ZNmKJSxAnb2m/5Bq4lE9lhUcau33Ml8DM0g==}
+  /tsconfig-paths/3.14.1:
+    resolution: {integrity: sha512-fxDhWnFSLt3VuTwtvJt5fpwxBHg5AdKWMsgcPOOIilyjymcYVZoCQF8fvFRezCNfblEXmi+PcM1eYHeOAgXCOQ==}
     dependencies:
       '@types/json5': 0.0.29
       json5: 1.0.1
