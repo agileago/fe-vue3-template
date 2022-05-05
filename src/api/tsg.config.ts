@@ -18,14 +18,10 @@ const projects: Project[] = [
     prettierConfig: prettier,
     generateRequestFunction(arg) {
       let parameter = arg.parameterTypeName
-        ? `option${!arg.parameterRequired ? '?' : ''}: ${
-            arg.parameterTypeName
-          }, `
+        ? `option${!arg.parameterRequired ? '?' : ''}: ${arg.parameterTypeName}, `
         : ''
       parameter += 'config?: AxiosRequestConfig'
-      const body = `requester<${arg.responseSuccessTypeName}>('${
-        arg.pathname
-      }', { method: '${arg.httpMethod}' ${
+      const body = `requester<${arg.responseSuccessTypeName}>('${arg.pathname}', { method: '${arg.httpMethod}' ${
         arg.parameterTypeName ? ', ...option' : ''
       }}, config)`
       return `(${parameter}) => ${body}`

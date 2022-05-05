@@ -43,6 +43,8 @@ module.exports = defineConfig({
       })
       return definitions
     })
+    config.resolve.alias.delete('@')
+    config.resolve.plugin('tsconfig-paths').use(require('tsconfig-paths-webpack-plugin'))
   },
   configureWebpack: config => {
     // 类组件热更新
