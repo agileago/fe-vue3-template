@@ -2,6 +2,7 @@ import type { AxiosInstance, AxiosRequestConfig } from 'axios'
 import axios from 'axios'
 import * as pathToRegexp from 'path-to-regexp'
 import type { RequestParameter } from 'ts-gear'
+import config from '@/config'
 
 // region 基础方法 基本不需要动
 interface ReturnMessageArg {
@@ -99,7 +100,7 @@ declare module 'axios' {
 
 // 自定义
 export const customRequest = axios.create({
-  baseURL: process.env.NODE_ENV === 'development' ? '/api' : '',
+  baseURL: config.API,
 })
 
 export const custom = createRequester(customRequest)

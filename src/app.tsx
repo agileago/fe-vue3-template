@@ -1,18 +1,15 @@
-import './theme/main.scss'
-import '@abraham/reflection'
-import { createApp } from 'vue'
-import { RouterService } from '@/router/router.service'
-import { UserService } from '@/auth/user.service'
 import { Component, VueComponent } from 'vue3-oop'
+import { RouterService } from '@/router/router.service'
 import RouterStart from '@/router'
+import { UserService } from '@/auth/user.service'
+import { HttpInterceptor } from '@/api/http.interceptor'
 import { ConfigProvider } from 'ant-design-vue'
 import zhCN from 'ant-design-vue/lib/locale/zh_CN'
 import { RouterView } from 'vue-router'
-import { HttpInterceptor } from '@/api/http.interceptor'
-import { setup } from '@/setup'
+import './theme/app.scss'
 
 @Component({ providers: [RouterService, RouterStart, UserService, HttpInterceptor] })
-class App extends VueComponent {
+export class App extends VueComponent {
   // 此处的服务优先执行
   constructor(private routerStart: RouterStart, private httpInterceptor: HttpInterceptor) {
     super()
@@ -25,7 +22,3 @@ class App extends VueComponent {
     )
   }
 }
-
-const app = createApp(App)
-setup(app)
-app.mount('#app')

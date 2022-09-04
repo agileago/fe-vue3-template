@@ -19,11 +19,11 @@
     "preserveValueImports": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "types": ["webpack-env", "vite/client"],
+    "types": ["webpack-env"],
     "paths": {
       "@/*": ["src/*"]
     },
-    "lib": ["esnext", "dom"],
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
     "noEmitOnError": false
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "tests/**/*.ts", "tests/**/*.tsx", "global.d.ts"],
