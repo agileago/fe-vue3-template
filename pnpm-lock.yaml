@@ -17,7 +17,6 @@ specifiers:
   axios: 0.27.2
   babel-loader: ^8.2.5
   babel-plugin-import: ^1.13.5
-  co: '4'
   core-js: ^3.25.0
   eslint: ~8.22.0
   eslint-config-prettier: ^8.5.0
@@ -75,7 +74,6 @@ devDependencies:
   '@vue3-oop/jsx-hot-loader': 0.1.6
   babel-loader: 8.2.5_tb6moc662p5idmcg3l5ipbhpta
   babel-plugin-import: 1.13.5
-  co: 4.6.0
   eslint: 8.22.0
   eslint-config-prettier: 8.5.0_eslint@8.22.0
   eslint-plugin-prettier: 4.2.1_i2cojdczqdiurzgttlwdgf764e
@@ -3874,11 +3872,6 @@ packages:
   /clone/1.0.4:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
-    dev: true
-
-  /co/4.6.0:
-    resolution: {integrity: sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ==, tarball: co/download/co-4.6.0.tgz}
-    engines: {iojs: '>= 1.0.0', node: '>= 0.12.0'}
     dev: true
 
   /code-block-writer/11.0.3:
