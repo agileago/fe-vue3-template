@@ -7,7 +7,7 @@ export default class CountView extends VueComponent {
 
   render() {
     return (
-      <div class={'text-center'}>
+      <div class={'text-center text-xl'}>
         <h2>{this.count}</h2>
         <button onClick={this.add}>+</button>
         <button onClick={this.remove}>-</button>

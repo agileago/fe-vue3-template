@@ -36,6 +36,7 @@ specifiers:
   serve: ^14.0.1
   simple-git-hooks: ^2.8.0
   tailwindcss: ^3.1.8
+  tailwindcss-rem2px-preset: ^1.0.3
   ts-essentials: ^9.3.0
   ts-gear: ^4.11.2
   tsconfig-paths-webpack-plugin: ^4.0.0
@@ -92,6 +93,7 @@ devDependencies:
   serve: 14.0.1
   simple-git-hooks: 2.8.0
   tailwindcss: 3.1.8_postcss@8.4.16
+  tailwindcss-rem2px-preset: 1.0.3_tailwindcss@3.1.8
   ts-gear: 4.11.2_typescript@4.8.3
   tsconfig-paths-webpack-plugin: 4.0.0
   typescript: 4.8.3
@@ -9543,6 +9545,14 @@ packages:
   /symbol-observable/1.2.0:
     resolution: {integrity: sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==}
     engines: {node: '>=0.10.0'}
+    dev: true
+
+  /tailwindcss-rem2px-preset/1.0.3_tailwindcss@3.1.8:
+    resolution: {integrity: sha512-uG9CYE1WXsqSUIyqmHDyr63Zagfjn2Igk32gGPPzvq6FvZ2GVQx7sYj+pflkKA65VZw3rUsraQQoGQw2+EB31A==}
+    peerDependencies:
+      tailwindcss: ^2.0.0 || >=3.0.0
+    dependencies:
+      tailwindcss: 3.1.8_postcss@8.4.16
     dev: true
 
   /tailwindcss/3.1.8_postcss@8.4.16:

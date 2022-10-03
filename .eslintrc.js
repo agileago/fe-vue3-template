@@ -4,7 +4,11 @@ module.exports = {
     node: true,
     browser: true,
   },
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+  ],
   plugins: ['@typescript-eslint'],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -13,8 +17,6 @@ module.exports = {
     ecmaFeatures: {
       jsx: true,
     },
-    tsconfigRootDir: __dirname,
-    project: ['./tsconfig.json'],
   },
   rules: {
     '@typescript-eslint/unbound-method': 'off',
