@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "ES2021",
     "module": "esnext",
     "strict": true,
     "jsx": "preserve",
@@ -14,9 +14,7 @@
     "importHelpers": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "isolatedModules": true,
-    "importsNotUsedAsValues": "error",
-    "preserveValueImports": true,
+    "verbatimModuleSyntax": true,
     "sourceMap": true,
     "baseUrl": ".",
     "types": ["webpack-env"],
